@@ -36,7 +36,7 @@ ${partition_type}
 w
 _EOF_
 
-return $?
+  return $?
 }
 
 for i in $(lsblk -l | cut -d " " -f1 | grep -E '^(sd[b-z]$)'); do
@@ -59,7 +59,7 @@ if [[ $(echo "${raid_devices}" | wc -w) -lt 3 ]]; then
 fi
 
 
-yum install -y mdadm
+yum install -yy mdadm
 if [[ "$?" -ne 0 ]]; then
   err "Mdadm installation error"
   exit 1
