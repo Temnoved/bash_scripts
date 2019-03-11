@@ -47,7 +47,7 @@ fi
 
 write_repo > /etc/yum.repos.d/MariaDB.repo
 
-yum install mariadb-server -y
+yum install mariadb-server -yy
 if [[ "$?" -ne 0 ]]; then
   err "Installing MariaDB-server error"
   exit 1
